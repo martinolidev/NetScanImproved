@@ -14,6 +14,8 @@
 		88223F1C2BBF4CAE00CF0E32 /* NetScanImprovedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F1B2BBF4CAE00CF0E32 /* NetScanImprovedTests.swift */; };
 		88223F262BBF4CAE00CF0E32 /* NetScanImprovedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F252BBF4CAE00CF0E32 /* NetScanImprovedUITests.swift */; };
 		88223F282BBF4CAE00CF0E32 /* NetScanImprovedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F272BBF4CAE00CF0E32 /* NetScanImprovedUITestsLaunchTests.swift */; };
+		88223F392BBF4CFD00CF0E32 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F382BBF4CFD00CF0E32 /* ScannerView.swift */; };
+		88223F3B2BBF4D0800CF0E32 /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F3A2BBF4D0800CF0E32 /* ReportsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		88223F212BBF4CAE00CF0E32 /* NetScanImprovedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetScanImprovedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88223F252BBF4CAE00CF0E32 /* NetScanImprovedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetScanImprovedUITests.swift; sourceTree = "<group>"; };
 		88223F272BBF4CAE00CF0E32 /* NetScanImprovedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetScanImprovedUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		88223F382BBF4CFD00CF0E32 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		88223F3A2BBF4D0800CF0E32 /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,9 @@
 		88223F092BBF4CAC00CF0E32 /* NetScanImproved */ = {
 			isa = PBXGroup;
 			children = (
+				88223F362BBF4CE800CF0E32 /* ViewModels */,
+				88223F352BBF4CE300CF0E32 /* Models */,
+				88223F342BBF4CDC00CF0E32 /* Views */,
 				88223F0A2BBF4CAC00CF0E32 /* NetScanImprovedApp.swift */,
 				88223F0C2BBF4CAC00CF0E32 /* ContentView.swift */,
 				88223F0E2BBF4CAE00CF0E32 /* Assets.xcassets */,
@@ -125,6 +132,29 @@
 				88223F272BBF4CAE00CF0E32 /* NetScanImprovedUITestsLaunchTests.swift */,
 			);
 			path = NetScanImprovedUITests;
+			sourceTree = "<group>";
+		};
+		88223F342BBF4CDC00CF0E32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88223F382BBF4CFD00CF0E32 /* ScannerView.swift */,
+				88223F3A2BBF4D0800CF0E32 /* ReportsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88223F352BBF4CE300CF0E32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88223F362BBF4CE800CF0E32 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88223F392BBF4CFD00CF0E32 /* ScannerView.swift in Sources */,
 				88223F0D2BBF4CAC00CF0E32 /* ContentView.swift in Sources */,
+				88223F3B2BBF4D0800CF0E32 /* ReportsView.swift in Sources */,
 				88223F0B2BBF4CAC00CF0E32 /* NetScanImprovedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
