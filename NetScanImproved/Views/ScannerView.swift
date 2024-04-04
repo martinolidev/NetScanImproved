@@ -19,11 +19,18 @@ struct ScannerView: View {
             
             HStack {
                 Spacer()
+                Button("Save") {
+                    //code to save in the database
+                }
+                .buttonStyle(BorderedButtonStyle())
                 Button("Scan") {
                     //code here
                 }
                 .buttonStyle(BorderedButtonStyle())
             }
+            
+            
+            Spacer()
         }
         .padding()
         .navigationTitle("NetScan")
