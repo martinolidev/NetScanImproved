@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct ScannerView: View {
+    @State private var ipAddress: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text("IP Address: ")
+                TextField("IP address to scan", text: $ipAddress)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+        }
+        .padding()
+        .navigationTitle("NetScan")
     }
 }
 
 #Preview {
-    ScannerView()
+    ContentView()
 }
