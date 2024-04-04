@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var ipServer: String = ""
+    @State private var showAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -17,8 +18,15 @@ struct SettingsView: View {
                     TextField("IP address", text: $ipServer)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button("Save") {
-                        UserDefaults.standard.set(ipServer, forKey: "ipAddressServer")
+                        if ipServer.isEmpty {
+                            showAlert = true
+                        } else {
+                            UserDefaults.standard.set(ipServer, forKey: "ipAddressServer")
+                        }
                     }
+                    .alert(isPresented: $showAlert, content: {
+                        Alert(title: Text("Empty Field!"), message: Text("Give me the IP address where the API is hosted."), dismissButton: .default(Text("OK")))
+                    })
                     .buttonStyle(BorderedButtonStyle())
                 }
             } header: {
