@@ -10,6 +10,7 @@ import SwiftUI
 struct ScannerView: View {
     @State private var ipAddress: String = ""
     @State private var showAlert: Bool = false
+    @ObservedObject private var viewModel = NetworkViewModel()
     
     var body: some View {
         VStack {
@@ -33,6 +34,9 @@ struct ScannerView: View {
                 Button("Scan") {
                     if ipAddress.isEmpty {
                         showAlert = true
+                    } else {
+                        viewModel.makeRequest(ip: ipAddress)
+                        print(viewModel.$portsScanned)
                     }
                 }
                 .alert(isPresented: $showAlert, content: {
@@ -47,7 +51,6 @@ struct ScannerView: View {
                     .bold()
                 Spacer()
             }
-            
             
             Spacer()
             Text("The developer of this software, Martin Martinez Alvarez, is not reponsible for any misuse or damage caused by this application.")

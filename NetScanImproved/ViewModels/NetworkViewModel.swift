@@ -9,16 +9,16 @@ import Foundation
 
 
 class NetworkViewModel: ObservableObject {
-    init(ipScanned: String, portsScanned: Ports) {
+    init() {
         self.ipScanned = ""
         self.portsScanned = Ports(portData: [""])
     }
     
-    @Published private var ipScanned: String
-    @Published private var portsScanned: Ports
+    @Published var ipScanned: String
+    @Published var portsScanned: Ports
     let model = NetworkCall()
     
     func makeRequest(ip: String) {
-        let reponse = model.getRequest(ipToScan: ip)
+        portsScanned = model.sendInformation(ip: ip)
     }
 }
