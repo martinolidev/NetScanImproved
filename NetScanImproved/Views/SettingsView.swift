@@ -17,7 +17,7 @@ struct SettingsView: View {
                     TextField("IP address", text: $ipServer)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button("Save") {
-                        UserDefaults.standard.set(ipServer, forKey: "MyKey")
+                        UserDefaults.standard.set(ipServer, forKey: "ipAddressServer")
                     }
                     .buttonStyle(BorderedButtonStyle())
                 }
