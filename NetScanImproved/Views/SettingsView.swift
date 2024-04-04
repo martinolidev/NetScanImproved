@@ -13,8 +13,14 @@ struct SettingsView: View {
     var body: some View {
         VStack {
             Section {
-                TextField("IP address", text: $ipServer)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                HStack {
+                    TextField("IP address", text: $ipServer)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Button("Save") {
+                        UserDefaults.standard.set(ipServer, forKey: "MyKey")
+                    }
+                    .buttonStyle(BorderedButtonStyle())
+                }
             } header: {
                 HStack {
                     Text("IP address of the server")
