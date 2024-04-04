@@ -16,6 +16,7 @@
 		88223F282BBF4CAE00CF0E32 /* NetScanImprovedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F272BBF4CAE00CF0E32 /* NetScanImprovedUITestsLaunchTests.swift */; };
 		88223F392BBF4CFD00CF0E32 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F382BBF4CFD00CF0E32 /* ScannerView.swift */; };
 		88223F3B2BBF4D0800CF0E32 /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F3A2BBF4D0800CF0E32 /* ReportsView.swift */; };
+		88223F3D2BBF4FCC00CF0E32 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88223F3C2BBF4FCC00CF0E32 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		88223F272BBF4CAE00CF0E32 /* NetScanImprovedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetScanImprovedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		88223F382BBF4CFD00CF0E32 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		88223F3A2BBF4D0800CF0E32 /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
+		88223F3C2BBF4FCC00CF0E32 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				88223F382BBF4CFD00CF0E32 /* ScannerView.swift */,
 				88223F3A2BBF4D0800CF0E32 /* ReportsView.swift */,
+				88223F3C2BBF4FCC00CF0E32 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88223F3D2BBF4FCC00CF0E32 /* SettingsView.swift in Sources */,
 				88223F392BBF4CFD00CF0E32 /* ScannerView.swift in Sources */,
 				88223F0D2BBF4CAC00CF0E32 /* ContentView.swift in Sources */,
 				88223F3B2BBF4D0800CF0E32 /* ReportsView.swift in Sources */,

@@ -16,9 +16,25 @@ struct ScannerView: View {
                 TextField("IP address to scan", text: $ipAddress)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
+            
+            HStack {
+                Spacer()
+                Button("Scan") {
+                    //code here
+                }
+                .buttonStyle(BorderedButtonStyle())
+            }
         }
         .padding()
         .navigationTitle("NetScan")
+        .toolbar {
+            ToolbarItem{
+                NavigationLink(destination: SettingsView()) {
+                    Image(systemName: "gear")
+                        .foregroundStyle(Color.accentColor)
+                }
+            }
+        }
     }
 }
 
