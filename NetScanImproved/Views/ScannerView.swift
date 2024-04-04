@@ -29,6 +29,13 @@ struct ScannerView: View {
                 .buttonStyle(BorderedButtonStyle())
             }
             
+            HStack {
+                Text("Results for: \(ipAddress)")
+                    .font(.title2)
+                    .bold()
+                Spacer()
+            }
+            
             
             Spacer()
         }
