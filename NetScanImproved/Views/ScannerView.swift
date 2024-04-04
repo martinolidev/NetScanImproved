@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ScannerView: View {
     @State private var ipAddress: String = ""
+    @State private var showAlert: Bool = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -20,12 +22,22 @@ struct ScannerView: View {
             HStack {
                 Spacer()
                 Button("Save") {
-                    //code to save in the database
+                    if ipAddress.isEmpty {
+                        showAlert = true
+                    }
                 }
+                .alert(isPresented: $showAlert, content: {
+                    Alert(title: Text("Empty Field!"), message: Text("You should give me and IP address to scan and then save the results."), dismissButton: .default(Text("OK")))
+                })
                 .buttonStyle(BorderedButtonStyle())
                 Button("Scan") {
-                    //code here
+                    if ipAddress.isEmpty {
+                        showAlert = true
+                    }
                 }
+                .alert(isPresented: $showAlert, content: {
+                    Alert(title: Text("Empty Field!"), message: Text("You should give me an IP address to scan."), dismissButton: .default(Text("OK")))
+                })
                 .buttonStyle(BorderedButtonStyle())
             }
             
