@@ -50,6 +50,10 @@ struct ScannerView: View {
             
             
             Spacer()
+            Text("The developer of this software, Martin Martinez Alvarez, is not reponsible for any misuse or damage caused by this application.")
+                .font(.caption)
+                .foregroundStyle(.gray)
+                .multilineTextAlignment(.center)
         }
         .padding()
         .navigationTitle("NetScan")
