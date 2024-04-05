@@ -24,7 +24,7 @@ struct ContentView: View {
                 Text("Reports")
                 Image(systemName: "doc.viewfinder.fill")
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
