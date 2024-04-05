@@ -10,7 +10,8 @@ import SwiftUI
 struct ScannerView: View {
     @State private var ipAddress: String = ""
     @State private var showAlert: Bool = false
-    @ObservedObject private var viewModel = NetworkViewModel()
+    @State private var showList: Bool = false
+    @ObservedObject private var model = NetworkCall()
     
     var body: some View {
         VStack {
@@ -35,8 +36,10 @@ struct ScannerView: View {
                     if ipAddress.isEmpty {
                         showAlert = true
                     } else {
-                        viewModel.makeRequest(ip: ipAddress)
-                        print(viewModel.$portsScanned)
+                        model.getRequest(ipToScan: ipAddress)
+                        if (model.ports?.portNumbers) != nil {
+                            showList = true
+                        }
                     }
                 }
                 .alert(isPresented: $showAlert, content: {
@@ -50,6 +53,14 @@ struct ScannerView: View {
                     .font(.title2)
                     .bold()
                 Spacer()
+            }
+            
+            if showList == true {
+                List(model.ports?.portNumbers ?? [""], id: \.self) {
+                    port in
+                    Text(port)
+                }
+                .listStyle(PlainListStyle())
             }
             
             Spacer()

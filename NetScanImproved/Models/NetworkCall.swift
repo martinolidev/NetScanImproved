@@ -9,28 +9,23 @@ import Foundation
 import Alamofire
 
 struct Ports: Codable {
-    var portData: [String]
+    var portNumbers: [String]
 }
 
-class NetworkCall {
+class NetworkCall: ObservableObject {
     private var savedServerIP: String = UserDefaults.standard.string(forKey: "ipAddressServer") ?? ""
-    var reponseData: Ports
-    
-    init() {
-        reponseData = Ports(portData: [""])
-    }
-    
-    func sendInformation(ip: String) -> Ports {
-        AF.request("http://\(savedServerIP):8080/ip/\(ip)", method: .get).validate(statusCode: 200...299).responseDecodable(of: Ports.self) {
-            response in
-            
-            if let content = response.value {
-                self.reponseData = Ports(portData: content.portData)
-            } else {
-                print(response.error?.responseCode ?? "No code error")
+    var ports: Ports?
+
+    func getRequest(ipToScan: String) {
+            AF.request("http://\(savedServerIP):8080/ip/\(ipToScan)", method: .get).validate(statusCode: 200...299).responseDecodable(of: Ports.self) { response in
+                switch response.result {
+                case .success(let ports):
+                    DispatchQueue.main.async {
+                        self.ports = ports
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
             }
-        }
-        
-        return reponseData
     }
 }

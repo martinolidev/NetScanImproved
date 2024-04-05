@@ -19,6 +19,6 @@ class NetworkViewModel: ObservableObject {
     let model = NetworkCall()
     
     func makeRequest(ip: String) {
-        portsScanned = model.sendInformation(ip: ip)
+        portsScanned = model.getRequest(ipToScan: ip)
     }
 }
