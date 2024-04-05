@@ -29,8 +29,22 @@ struct ReportsView: View {
                 List {
                     ForEach(reports) {
                         word in
-                        Text("\(word.ip)")
-                        Text("\(word.openPorts)")
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text("IP Scanned: ")
+                                    .bold()
+                                Spacer()
+                                Text("\(word.ip)")
+                            }
+                            HStack {
+                                Text("Open Ports:")
+                                    .bold()
+                                Spacer()
+                                Text("\(word.openPorts)")
+                                    .font(.subheadline)
+                            }
+                        }
+                        
                     }
                 }.listStyle(PlainListStyle())
             }
