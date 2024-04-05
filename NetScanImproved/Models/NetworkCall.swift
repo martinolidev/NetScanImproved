@@ -13,7 +13,7 @@ struct Ports: Codable {
 }
 
 class NetworkCall: ObservableObject {
-    private var savedServerIP: String = UserDefaults.standard.string(forKey: "ipAddressServer") ?? ""
+    private var savedServerIP: String = UserDefaults.standard.string(forKey: "ipAddressServer") ?? "192.158.1.106"
     var ports: Ports?
 
     func getRequest(ipToScan: String) {
