@@ -25,6 +25,14 @@ struct ReportsView: View {
                         .bold()
                         .font(.headline)
                 }
+            } else {
+                List {
+                    ForEach(reports) {
+                        word in
+                        Text("\(word.ip)")
+                        Text("\(word.openPorts)")
+                    }
+                }.listStyle(PlainListStyle())
             }
         }
         .padding()

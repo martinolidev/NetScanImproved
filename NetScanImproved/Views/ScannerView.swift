@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ScannerView: View {
     @State private var ipAddress: String = ""
     @State private var showAlert: Bool = false
     @State private var showList: Bool = false
     @ObservedObject private var model = NetworkCall()
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         VStack {
@@ -26,6 +28,8 @@ struct ScannerView: View {
                 Button("Save") {
                     if ipAddress.isEmpty {
                         showAlert = true
+                    } else {
+                        saveReport(ip: ipAddress, ports: model.ports?.portNumbers ?? [""])
                     }
                 }
                 .alert(isPresented: $showAlert, content: {
@@ -79,6 +83,11 @@ struct ScannerView: View {
                 }
             }
         }
+    }
+    
+    func saveReport(ip: String, ports: [String]) {
+        let data = SaveReport(ip: ip, openPorts: ports)
+        context.insert(data)
     }
 }
 
