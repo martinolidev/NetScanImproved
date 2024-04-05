@@ -46,11 +46,20 @@ struct ReportsView: View {
                         }
                         
                     }
+                    .onDelete(perform: { indexSet in
+                        for index in indexSet {
+                            deleteReport(reports[index])
+                        }
+                    })
                 }.listStyle(PlainListStyle())
             }
         }
         .padding()
         .navigationTitle("My reports")
+    }
+    
+    func deleteReport(_ item: SaveReport) {
+        context.delete(item)
     }
 }
 
